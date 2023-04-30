@@ -1,67 +1,81 @@
 * {
     box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
   }
   
-  html, body {
-    height: 100%;
-  }
-  
-  .header {
+  /* Header */
+  header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #fff;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    z-index: 1;
   }
   
-  .logo {
-    font-size: 28px;
-    font-weight: bold;
+  header img {
+    height: 60px;
   }
   
   nav ul {
-    list-style: none;
     display: flex;
+    list-style: none;
   }
   
   nav li {
-    margin-right: 20px;
+    margin-left: 20px;
   }
   
-  nav a {
-    color: #333;
+  nav li a {
     text-decoration: none;
-    font-size: 16px;
+    color: #333;
     font-weight: bold;
-    transition: color 0.2s ease-in-out;
+    transition: all 0.3s ease;
   }
   
-  nav a:hover {
-    color: #007bff;
+  nav li a:hover {
+    color: #00bcd4;
   }
   
+  /* Hero */
   .hero {
+    background-image: url('https://images.unsplash.com/photo-1529692230602-9da2b32f58c4');
+    background-size: cover;
+    background-position: center;
+    height: 600px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    background-color: #007bff;
     color: #fff;
     text-align: center;
+    position: relative;
   }
   
-  .hero h2 {
-    font-size: 48px;
-    font-weight: bold;
+  .hero:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+  
+  .hero h1 {
+    font-size: 60px;
     margin-bottom: 20px;
   }
   
@@ -70,78 +84,67 @@
     margin-bottom: 40px;
   }
   
-  button {
-    background-color: #fff;
-    color: #007bff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  }
-  
-  button:hover {
-    background-color: #007bff;
+  .hero button {
+    background-color: #00bcd4;
     color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
   }
   
-  .form {
-    display: none;
+  .hero button:hover {
+    background-color: #0097a7;
+  }
+  
+  /* Services */
+  .services {
+    display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-  }
-  
-  .form h3 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #fff;
-  }
-  
-  form {
+    flex-wrap: wrap;
+    padding: 80px 20px;
     background-color: #fff;
-    padding: 40px;
-    border-radius: 5px;
   }
   
-  label {
-    display: block;
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #333;
+  .service {
+    width: 300px;
+    margin: 30px;
+    background-color: #f2f2f2;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
   }
   
-  input[type=text], input[type=email] {
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    margin-bottom: 20px;
+  .service:hover {
+    transform: translateY(-10px);
+  }
+  
+  .service img {
     width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .service h3 {
+    font-size: 24px;
+    margin: 20px;
+  }
+  
+  .service p {
     font-size: 16px;
+    margin: 20px;
   }
   
-  input[type=submit] {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  /* About */
+  .about {
+    padding: 80px 20px;
   }
   
-  input[type=submit]:hover {
-    background-color:
+  .about h2 {
+    font-size: 36px;
+    margin-bottom: 
   
