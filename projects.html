@@ -9,8 +9,24 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
     <link rel="stylesheet" href="assets/css/Parallax-Scroll-Effect.css">
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="authCheck.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+
+<!-- Add the Firebase configuration here -->
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyBLIboJTu2GA53lZXFwh92Mk3_31NuNj2w",
+            authDomain: "arnotes.com.au",
+            projectId: "arnotes-8c46e",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "1:113656353278:web:ee7790cf047aa8cc76b0af"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<script src="authCheck.js"></script>
+
     <script>
         function checkUserLoggedIn() {
           firebase.auth().onAuthStateChanged((user) => {
