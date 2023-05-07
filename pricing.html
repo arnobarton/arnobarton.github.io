@@ -12,6 +12,18 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="authCheck.js"></script>
     <script>
+        
+  var firebaseConfig = {
+    apiKey: "AIzaSyBLIboJTu2GA53lZXFwh92Mk3_31NuNj2w",
+            authDomain: "arnotes.com.au",
+            projectId: "arnotes-8c46e",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "1:113656353278:web:ee7790cf047aa8cc76b0af"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
         function checkUserLoggedIn() {
           firebase.auth().onAuthStateChanged((user) => {
             if (user) {
