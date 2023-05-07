@@ -26,7 +26,9 @@
         }
       
         // Call the function when the page loads
-        checkUserLoggedIn();
+        window.onload = function() {
+          checkUserLoggedIn();
+        }
       </script>
 </head>
 
