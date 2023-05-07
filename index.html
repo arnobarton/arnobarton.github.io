@@ -9,6 +9,52 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
     <link rel="stylesheet" href="assets/css/aos.min.css">
     <link rel="stylesheet" href="assets/css/Parallax-Scroll-Effect.css">
+    <!-- Add the Firebase SDKs to your app -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+
+<!-- Initialize Firebase -->
+<script>
+    // Replace the following with your app's Firebase project configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyBLIboJTu2GA53lZXFwh92Mk3_31NuNj2w",
+            authDomain: "arnotes.com.au",
+            projectId: "arnotes-8c46e",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "1:113656353278:web:ee7790cf047aa8cc76b0af"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    // Get the button elements
+    const loginButton = document.getElementById("loginButton");
+    const earlyAccessButton = document.getElementById("earlyAccessButton");
+    const signOutButton = document.getElementById("signOutButton");
+
+    // Handle authentication state changes
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+            // User is signed in
+            loginButton.style.display = "none";
+            earlyAccessButton.style.display = "none";
+            signOutButton.style.display = "block";
+        } else {
+            // User is signed out
+            loginButton.style.display = "block";
+            earlyAccessButton.style.display = "block";
+            signOutButton.style.display = "none";
+        }
+    });
+
+    // Sign out function
+    signOutButton.addEventListener("click", () => {
+        firebase.auth().signOut().then(() => {
+            console.log("User signed out.");
+        }).catch((error) => {
+            console.error("Error signing out:", error);
+        });
+    });
+</script>
 </head>
 
 <body>
@@ -22,10 +68,11 @@
                     <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="services.html">The breakdown</a></li>
                     <li class="nav-item"><a class="nav-link" href="projects.html">Project roadmap</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pricing.html">donations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html" >donations</a></li>
                     <li class="nav-item"></li>
-                    <li class="nav-item"><a class="nav-link" href="login.html">Log in</a></li>
-                </ul><a class="btn btn-primary shadow" role="button" href="signup.html">Get Early Access</a><span class="navbar-text"></span>
+                    <li class="nav-item"><a class="nav-link" href="login.html" id="loginButton">Log in</a></li>
+                    <li class="nav-item" role="nav-link" href="login.html" id="signOutButton">Sign Out</a>
+                </ul><a class="btn btn-primary shadow" role="button" href="signup.html" id="earlyAccessButton">Get Early Access</a><span class="navbar-text"></span>
             </div>
         </div>
     </nav>
