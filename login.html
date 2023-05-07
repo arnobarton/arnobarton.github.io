@@ -8,6 +8,63 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
     <link rel="stylesheet" href="assets/css/Parallax-Scroll-Effect.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://cdn.crossid.io/crossid.min.js"></script>
+    <script>
+        // TODO: Replace the following with your app's Firebase project configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBLIboJTu2GA53lZXFwh92Mk3_31NuNj2w",
+            authDomain: "arnotes.com.au",
+            projectId: "arnotes-8c46e",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "1:113656353278:web:ee7790cf047aa8cc76b0af"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        function loginUser(email, password) {
+            firebase.auth().signInWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    // Signed in
+                    var user = userCredential.user;
+                    console.log("User signed in:", user);
+                    window.location.href = "index.html";
+                })
+                .catch((error) => {
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
+                    console.error("Error signing in:", errorCode, errorMessage);
+                    alert(errorMessage);
+                });
+        }
+    firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    // User is signed in, so grant access to other pages
+    console.log("User is signed in:", user);
+  } else {
+    // No user is signed in, so redirect to the login page
+    console.log("User is signed out.");
+  }
+});
+    </script>
+</head>
+
+<body>
+    <!-- Your existing HTML code -->
+
+</html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Log in - Brand</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
+    <link rel="stylesheet" href="assets/css/Parallax-Scroll-Effect.css">
 </head>
 
 <body>
@@ -46,8 +103,8 @@
                             <form method="post">
                                 <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Email"></div>
                                 <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password"></div>
-                                <div class="mb-3"><button class="btn btn-primary shadow d-block w-100" type="submit">Log in</button></div>
-                                <p class="text-muted">Forgot your password?</p>
+                                <div class="mb-3"><button onclick="crossid.login()" class="btn btn-primary shadow d-block w-100" type="submit">Log in</button></div>
+                                <p type="link" onclick="window.location.href='signup.html'" class="text-muted">Sign Up</p>
                             </form>
                         </div>
                     </div>
@@ -77,6 +134,21 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="assets/js/bold-and-dark.js"></script>
+    <script>
+        crossid.init({ clientId: 'rrnZucJG25XyCS7cdK2BF2gxv0q6VDL4' });
+      </script>
+      
+      <script>
+        document.querySelector("form").addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            const email = document.querySelector("input[name='email']").value;
+            const password = document.querySelector("input[name='password']").value;
+
+            loginUser(email, password);
+        });
+    </script>
+</body>
 </body>
 
 </html>
