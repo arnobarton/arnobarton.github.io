@@ -44,6 +44,37 @@
 </head>
 
 <body>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const loginButton = document.getElementById("loginButton");
+            const earlyAccessButton = document.getElementById("earlyAccessButton");
+            const signOutButton = document.getElementById("signOutButton");
+        
+            // Handle authentication state changes
+            firebase.auth().onAuthStateChanged((user) => {
+                if (user) {
+                    // User is signed in
+                    loginButton.style.display = "none";
+                    earlyAccessButton.style.display = "none";
+                    signOutButton.style.display = "block";
+                } else {
+                    // User is signed out
+                    loginButton.style.display = "block";
+                    earlyAccessButton.style.display = "block";
+                    signOutButton.style.display = "none";
+                }
+            });
+        
+            // Sign out function
+            signOutButton.addEventListener("click", () => {
+                firebase.auth().signOut().then(() => {
+                    console.log("User signed out.");
+                }).catch((error) => {
+                    console.error("Error signing out:", error);
+                });
+            });
+        });
+        </script>
     <nav class="navbar navbar-dark navbar-expand-md sticky-top py-3" id="mainNav">
         <div class="container"><a class="navbar-brand d-flex align-items-center" href="/"><span class="bs-icon-sm bs-icon-circle bs-icon-primary shadow d-flex justify-content-center align-items-center me-2 bs-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-bezier">
                         <path fill-rule="evenodd" d="M0 10.5A1.5 1.5 0 0 1 1.5 9h1A1.5 1.5 0 0 1 4 10.5v1A1.5 1.5 0 0 1 2.5 13h-1A1.5 1.5 0 0 1 0 11.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm10.5.5A1.5 1.5 0 0 1 13.5 9h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM6 4.5A1.5 1.5 0 0 1 7.5 3h1A1.5 1.5 0 0 1 10 4.5v1A1.5 1.5 0 0 1 8.5 7h-1A1.5 1.5 0 0 1 6 5.5v-1zM7.5 4a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1z"></path>
@@ -57,6 +88,7 @@
                     <li class="nav-item"><a class="nav-link active" href="pricing.html">donations</a></li>
                     <li class="nav-item"></li>
                     <li class="nav-item"><a class="nav-link" href="login.html">Log in</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html" id="signOutButton">Sign Out</a></li>
                 </ul><a class="btn btn-primary shadow" role="button" href="signup.html">Get Early Access</a><span class="navbar-text"></span>
             </div>
         </div>
