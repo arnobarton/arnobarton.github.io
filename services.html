@@ -42,61 +42,6 @@
       </script>
     
     </script>
-    <style>
-    .navbar-custom {
-     background-color: #27262e; /* Jet black color */
-            }
-    #loginButton, #earlyAccessButton, #signOutButton {
-        display: none;
-    }
-    </style>
-    </head>
-    
-        <script>
-            document.addEventListener("DOMContentLoaded", () => {
-                const loginButton = document.getElementById("loginButton");
-                const earlyAccessButton = document.getElementById("earlyAccessButton");
-                const signOutButton = document.getElementById("signOutButton");
-    
-                firebase.auth().onAuthStateChanged((user) => {
-                    if (user) {
-                        loginButton.style.display = "none";
-                        earlyAccessButton.style.display = "none";
-                        signOutButton.style.display = "block";
-                    } else {
-                        loginButton.style.display = "block";
-                        earlyAccessButton.style.display = "block";
-                        signOutButton.style.display = "none";
-                    }
-                });
-    
-                signOutButton.addEventListener("click", () => {
-                    firebase.auth().signOut().then(() => {
-                        console.log("User signed out.");
-                    }).catch((error) => {
-                        console.error("Error signing out:", error);
-                    });
-                });
-            });
-            </script>
-            <script>
-                 firebase.initializeApp(firebaseConfig);
-
-                 function checkUserLoggedIn() {
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      // User is signed in
-      document.getElementById('loginButton').style.display = 'none';
-      document.getElementById('earlyAccessButton').style.display = 'none';
-      document.getElementById('signOutButton').style.display = 'block';
-    } else {
-      // No user is signed in
-      document.getElementById('loginButton').style.display = 'block';
-      document.getElementById('earlyAccessButton').style.display = 'block';
-      document.getElementById('signOutButton').style.display = 'none';
-    }
-  });
-}
 
 checkUserLoggedIn();
 </script>
@@ -143,13 +88,30 @@ checkUserLoggedIn();
                     <li class="nav-item"><a class="nav-link active" href="services.html">The breakdown</a></li>
                     <li class="nav-item"><a class="nav-link" href="projects.html">Project roadmap</a></li>
                     <li class="nav-item"><a class="nav-link" href="pricing.html">Donations</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.html">Log in</a></li>
+                    <li class="nav-item" id="loginButton"><a class="nav-link" href="login.html">Log in</a></li>
                 </ul>
-                <a class="btn btn-primary shadow" role="button" href="signup.html">Get Early Access</a>
+                <a class="btn btn-primary shadow" role="button" id="earlyAccessButton" href="signup.html">Get Early Access</a>
                 <span class="navbar-text"></span>
             </div>
         </div>
     </nav>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const loginButton = document.getElementById("loginButton");
+            const earlyAccessButton = document.getElementById("earlyAccessButton");
+    
+            firebase.auth().onAuthStateChanged((user) => {
+                if (user) {
+                    loginButton.style.display = "none";
+                    earlyAccessButton.style.display = "none";
+                } else {
+                    loginButton.style.display = "block";
+                    earlyAccessButton.style.display = "block";
+                }
+            });
+        });
+    </script>
 
     <div class="jumbotron text-center">
         <div class="typewriter-text"></div>
