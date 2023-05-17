@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
     <link rel="stylesheet" href="assets/css/aos.min.css">
     <link rel="stylesheet" href="assets/css/Parallax-Scroll-Effect.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
     <!-- Add the Firebase SDKs -->
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
@@ -31,13 +33,16 @@
 
 </script>
 <style>
+.navbar-custom {
+ background-color: #27262e; /* Jet black color */
+        }
 #loginButton, #earlyAccessButton, #signOutButton {
     display: none;
 }
 </style>
 </head>
 
-<body>
+<body style="--bs-body-bg: #27262e;">
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const loginButton = document.getElementById("loginButton");
@@ -83,36 +88,42 @@
         
             checkIfUserLoggedIn();
         </script>
-    <nav class="navbar navbar-dark navbar-expand-md sticky-top py-3" id="mainNav">
-        <div class="container"><a class="navbar-brand d-flex align-items-center" href="/"><span class="bs-icon-sm bs-icon-circle bs-icon-primary shadow d-flex justify-content-center align-items-center me-2 bs-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-bezier">
-                        <path fill-rule="evenodd" d="M0 10.5A1.5 1.5 0 0 1 1.5 9h1A1.5 1.5 0 0 1 4 10.5v1A1.5 1.5 0 0 1 2.5 13h-1A1.5 1.5 0 0 1 0 11.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm10.5.5A1.5 1.5 0 0 1 13.5 9h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM6 4.5A1.5 1.5 0 0 1 7.5 3h1A1.5 1.5 0 0 1 10 4.5v1A1.5 1.5 0 0 1 8.5 7h-1A1.5 1.5 0 0 1 6 5.5v-1zM7.5 4a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1z"></path>
-                        <path d="M6 4.5H1.866a1 1 0 1 0 0 1h2.668A6.517 6.517 0 0 0 1.814 9H2.5c.123 0 .244.015.358.043a5.517 5.517 0 0 1 3.185-3.185A1.503 1.503 0 0 1 6 5.5v-1zm3.957 1.358A1.5 1.5 0 0 0 10 5.5v-1h4.134a1 1 0 1 1 0 1h-2.668a6.517 6.517 0 0 1 2.72 3.5H13.5c-.123 0-.243.015-.358.043a5.517 5.517 0 0 0-3.185-3.185z"></path>
-                    </svg></span><span>Ar</span><span style="color: #70cee2;">notes</span></a><span></span><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.html">The breakdown</a></li>
-                    <li class="nav-item"><a class="nav-link" href="projects.html">Project roadmap</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pricing.html" >donations</a></li>
-                    <li class="nav-item"></li>
-                    <li class="nav-item"><a class="nav-link" href="login.html" id="loginButton">Log in</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.html" id="signOutButton">Sign Out</a></li>
-                </ul><a class="btn btn-primary shadow" role="button" href="signup.html" id="earlyAccessButton">Get Early Access</a><span class="navbar-text"></span>
+        <nav class="navbar navbar-dark navbar-expand-md sticky-top py-3 navbar-custom" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="/">
+                    <span class="bs-icon-sm bs-icon-circle bs-icon-primary shadow d-flex justify-content-center align-items-center me-2 bs-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-bezier">
+                            <!-- SVG path goes here -->
+                        </svg>
+                    </span>
+                    <span>Ar</span><span style="color: #70cee2;">notes</span>
+                </a>
+                <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1">
+                    <span class="visually-hidden">Toggle navigation</span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">The breakdown</a></li>
+                        <li class="nav-item"><a class="nav-link" href="projects.html">Project roadmap</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pricing.html" >donations</a></li>
+                        <li class="nav-item"><a class="nav-link" href="login.html" id="loginButton">Log in</a></li>
+                        <li class="nav-item"><a class="nav-link" href="login.html" id="signOutButton">Sign Out</a></li>
+                    </ul>
+                    <a class="btn btn-primary shadow" role="button" href="signup.html" id="earlyAccessButton">Get Early Access</a>
+                    <span class="navbar-text"></span>
+                </div>
             </div>
-        </div>
-    </nav>
-    <header class="bg-dark">
+        </nav>
+        
+    <header class="bg-dark" style="--bs-body-bg: #27262e;">
         <div<span class="container pt-4 pt-xl-5"></span>
             <div><div id="box-2">
                 
     <h1></h1>
 </div>
-<div class="row pt-5">
-    <div class="col-md-8 col-xl-6 text-center text-md-start mx-auto">
-        <div class="text-center">
-            <h1 class="fw-bold" style="font-size: 2.5rem; color: #00CCCC; padding-left: 40px;">The Future for IB Notetaking</h1>
-            <h1 class="fw-bold"></h1>
-        </div>
+
     </div>
     <div class="col-12 col-lg-10 mx-auto">
         <div class="position-relative" style="display: flex;flex-wrap: wrap;justify-content: flex-end;">
@@ -124,50 +135,104 @@
 </div>
 </div>
 </header>
-<section data-aos="flip-up" class="py-5" style="margin-bottom: -93px;padding-top: 31px;margin-top: -36px;">
+<section data-aos="flip-up" class="py-5" style="margin-bottom: -200px;padding-top: 31px;margin-top: -36px;">
 <div class="container text-center py-5" style="margin-bottom: -18px;margin-top: -18px;">
     <p class="mb-4" style="font-size: 1.6rem;padding-top: 0px;margin-top: -25px;"></p><a class="btn btn-primary" role="button" data-bss-hover-animate="pulse" data-bs-target="services.html" data-bs-toggle="link" href="services.html">The project breakdown</a><a href="#"> </a><a href="#"> </a><a href="#"> </a><a href="#"> </a><a href="#"> </a>
 </div>
+</div>
+
+</div>
 </section>
-<section>
-<div class="container py-5">
-<div class="mx-auto" style="max-width: 900px;">
-    <div class="row row-cols-1 row-cols-md-2 d-flex justify-content-center">
-        <div class="col-lg-6 mb-4" data-aos="slide-up">
-            <div class="card bg-primary-light">
-                <div class="card-body text-center px-4 py-5 px-md-5" data-aos="slide-up" style="height: 321.4px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-ear" style="font-size: 48px;">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                        <path d="M6 10a7 7 0 1 1 13 3.6a10 10 0 0 1 -2 2a8 8 0 0 0 -2 3a4.5 4.5 0 0 1 -6.8 1.4"></path>
-                        <path d="M10 10a3 3 0 1 1 5 2.2"></path>
-                    </svg>
-                    <p class="fw-bold text-primary card-text mb-2">listens and transcribes</p>
-                    <h5 class="fw-bold card-title mb-3" style="font-size: 17px;">&nbsp;forget about handwriting,<br>&nbsp;Arnotes will use&nbsp;the google speech to text API so you can accurately transcribe your class direct into the App .</h5><button class="btn btn-primary btn-sm" type="button">Learn more</button>
-                </div>
-            </div>
+<head>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #000;
+            color: #fff;
+            border: 2px solid #fff;
+            padding: 40px;
+            width: 300px;
+            height: 400px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card {
+        position: relative;
+    /* other styles... */
+        }
+
+        .card-icon {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: #fff; /* or any color you like */
+        }
+        .card-title {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+
+        .card-text {
+            margin-bottom: 30px;
+        }
+
+        .card-link {
+            color: #fff;
+            text-decoration: none;
+            border-bottom: 1px solid #fff;
+        }
+
+        .card-link:hover {
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card-container">
+        <div class="card">
+            <i class="fas fa-brain"></i>
+            <h3 class="card-title">intelligent</h3>
+            <p class="card-text">Arnotes will leverage the BERT™ NER language model to understand, identify and highlight key concepts, words and ideas based on your selected subject.</p>
+            <a href="services.html" class="card-link" target="_blank">Learn More</a>
         </div>
-        <div class="col mb-4" data-aos="slide-up" data-aos-duration="150" data-aos-delay="250">
-            <div class="card bg-secondary-light">
-                <div class="card-body text-center px-4 py-5 px-md-5" data-aos="slide-up" data-aos-duration="150" data-aos-delay="150"><img src="https://img.icons8.com/ios-glyphs/60/FFFFFF/brain.png"/></i>
-                    <p class="fw-bold text-secondary card-text mb-2">Intelligent</p>
-                    <h5 class="fw-bold card-title mb-3" style="font-size: 15px;">We use TensorFlow AI models to streamline your&nbsp; text, removing any extraneous information and leaving you with only the most relevant content to your chosen subject and unit.</h5><button class="btn btn-secondary btn-sm" type="button">Learn more</button>
-                </div>
-            </div>
+
+        <div class="card">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="32" height="32" viewBox="0 0 32 32"
+            style="fill:#FFFFFF;">
+            <path d="M 17 4 C 12.59375 4 9 7.59375 9 12 L 11 12 C 11 8.675781 13.675781 6 17 6 C 20.328125 6 23 8.664063 23 12 C 23 14.136719 22.078125 16.328125 20.96875 18.1875 C 19.859375 20.046875 18.59375 21.519531 17.96875 22.375 C 17.234375 23.382813 16.8125 24.363281 16.28125 25 C 15.75 25.636719 15.25 26 14 26 C 12.332031 26 11 24.667969 11 23 L 11 22 L 9 22 L 9 23 C 9 25.75 11.25 28 14 28 C 15.75 28 17.023438 27.222656 17.8125 26.28125 C 18.601563 25.339844 19.027344 24.339844 19.59375 23.5625 C 20.09375 22.875 21.476563 21.246094 22.6875 19.21875 C 23.898438 17.191406 25 14.699219 25 12 C 25 7.585938 21.40625 4 17 4 Z M 17 8 C 14.289063 8 12 10.15625 12 13 C 12 13.636719 11.988281 14.164063 11.90625 14.5 C 11.824219 14.835938 11.726563 14.964844 11.4375 15.15625 L 11 15.46875 L 11 16 C 11 16.710938 11.410156 17.347656 11.84375 17.6875 C 12.277344 18.027344 12.726563 18.179688 13.09375 18.34375 C 13.460938 18.507813 13.746094 18.671875 13.875 18.78125 C 14.003906 18.890625 14 18.851563 14 19 C 14 19.285156 13.929688 19.417969 13.59375 19.625 C 13.257813 19.832031 12.652344 20 11.90625 20 L 11.90625 22 C 12.929688 22 13.882813 21.789063 14.65625 21.3125 C 15.429688 20.835938 16 19.984375 16 19 C 16 18.277344 15.621094 17.617188 15.1875 17.25 C 14.753906 16.882813 14.289063 16.699219 13.90625 16.53125 C 13.523438 16.363281 13.222656 16.195313 13.09375 16.09375 C 13.378906 15.726563 13.742188 15.375 13.84375 14.96875 C 14.011719 14.289063 14 13.644531 14 13 C 14 11.179688 15.292969 10 17 10 C 18.128906 10 19.109375 10.621094 19.625 11.53125 L 21.34375 10.53125 C 20.484375 9.015625 18.859375 8 17 8 Z"></path>
+            </svg>
+            <h3 class="card-title">listens</h3>
+            <p class="card-text">Arnotes will utilize openAI's Whisper™ for precise and reliable speech recognition, ensuring accurate lecture transcriptions.</p>
+            <a href="services.html" class="card-link" target="_blank">Learn More</a>
         </div>
-        <div class="col mb-4">
-            <div class="card bg-info-light">
-                <div class="card-body text-center px-4 py-5 px-md-5" data-aos="flip-up"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-file-earmark-text" style="font-size: 46px;">
-                        <path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"></path>
-                        <path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z"></path>
-                    </svg>
-                    <p class="fw-bold text-info card-text mb-2">Organised</p>
-                    <h5 class="fw-bold card-title mb-3" style="font-size: 20px;margin-left: -89px;padding-right: 0px;margin-right: -41px;padding-left: 50px;">All your revision material in the one place, You'll have the freedom to choose what is kept, highlighted or discarded by the software, with all the setting relating to your IB course.</h5><button class="btn btn-info btn-sm" type="button">Learn more</button>
-                </div>
-            </div>
+
+        <div class="card">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 53 53"
+            style="fill:#FFFFFF;">
+            <path d="M 10.501953 2.5 C 8.0019531 2.5 5.9707031 4.529541 5.9707031 7.0195312 L 5.9707031 7.2988281 C 4.0772705 7.7506714 2.6621094 9.4469605 2.6621094 11.476562 C 2.6621094 13.506165 4.0772705 15.200501 5.9707031 15.652344 L 5.9707031 17.314453 C 4.0772705 17.766296 2.6621094 19.462586 2.6621094 21.492188 C 2.6621094 23.52179 4.0772705 25.218079 5.9707031 25.669922 L 5.9707031 27.330078 C 4.0772705 27.781921 2.6621094 29.478211 2.6621094 31.507812 C 2.6621094 33.537414 4.0772705 35.233704 5.9707031 35.685547 L 5.9707031 37.345703 C 4.0772705 37.797547 2.6621094 39.493836 2.6621094 41.523438 C 2.6621094 43.55304 4.0772705 45.249329 5.9707031 45.701172 L 5.9707031 45.970703 C 5.9707031 48.470703 8.0019531 50.5 10.501953 50.5 L 34.351562 50.5 C 36.841553 50.5 38.880859 48.470703 38.880859 45.970703 L 38.880859 39.140625 L 38.150391 40.560547 C 37.970399 40.920532 37.701111 41.249268 37.371094 41.529297 L 30.251953 47.070312 C 29.771973 47.460327 29.102112 47.699219 28.412109 47.699219 C 27.912109 47.699219 27.441711 47.579407 27.011719 47.359375 C 25.981689 46.809387 25.352112 45.710815 25.412109 44.550781 L 25.669922 38.671875 C 25.648804 39.205444 25.21698 39.634766 24.677734 39.634766 L 14.636719 39.634766 C 14.083984 39.634766 13.636719 39.187012 13.636719 38.634766 C 13.636719 38.08252 14.083984 37.634766 14.636719 37.634766 L 24.677734 37.634766 C 25.221802 37.634766 25.658203 38.069092 25.671875 38.609375 L 25.800781 35.679688 C 25.800781 34.859844 26.117218 34.46648 26.150391 34.359375 L 30.007812 26.882812 C 29.85611 27.241722 29.500488 27.494141 29.085938 27.494141 L 14.636719 27.494141 C 14.083984 27.494141 13.636719 27.046387 13.636719 26.494141 C 13.636719 25.941895 14.083984 25.494141 14.636719 25.494141 L 29.085938 25.494141 C 29.638672 25.494141 30.085938 25.941895 30.085938 26.494141 C 30.085938 26.632202 30.05838 26.763176 30.007812 26.882812 L 33.138672 20.8125 C 32.986969 21.17141 32.631348 21.423828 32.216797 21.423828 L 14.636719 21.423828 C 14.083984 21.423828 13.636719 20.976074 13.636719 20.423828 C 13.636719 19.871582 14.083984 19.423828 14.636719 19.423828 L 32.216797 19.423828 C 32.769531 19.423828 33.216797 19.871582 33.216797 20.423828 C 33.216797 20.56189 33.189239 20.692863 33.138672 20.8125 L 37.671875 12.029297 L 38.591797 10.25 L 38.880859 10.400391 L 38.880859 9.6796875 L 38.880859 7.0195312 C 38.880859 4.529541 36.841553 2.5 34.351562 2.5 L 10.501953 2.5 z M 45.980469 6.6757812 C 45.367966 6.6245346 44.745605 6.6956177 44.140625 6.890625 C 42.930603 7.2806396 41.941345 8.1102295 41.361328 9.2402344 L 40.365234 11.167969 L 48.8125 15.525391 L 49.810547 13.599609 C 51.010559 11.269592 50.091675 8.3894653 47.761719 7.1894531 C 47.196716 6.8994446 46.592972 6.7270279 45.980469 6.6757812 z M 17.865234 7.2910156 L 29.851562 7.2910156 C 30.404297 7.2910156 30.851562 7.7387695 30.851562 8.2910156 C 30.851562 8.8432617 30.404297 9.2910156 29.851562 9.2910156 L 17.865234 9.2910156 C 17.3125 9.2910156 16.865234 8.8432617 16.865234 8.2910156 C 16.865234 7.7387695 17.3125 7.2910156 17.865234 7.2910156 z M 5.9707031 9.40625 L 5.9707031 13.544922 C 5.1990967 13.171997 4.6621094 12.389587 4.6621094 11.476562 C 4.6621094 10.563538 5.1990966 9.7791748 5.9707031 9.40625 z M 39.447266 12.945312 L 27.912109 35.310547 C 27.787216 35.560333 27.818111 35.669106 27.800781 35.769531 L 27.412109 44.660156 C 27.392151 45.05011 27.611145 45.409851 27.951172 45.589844 C 28.101135 45.6698 28.252136 45.699219 28.412109 45.699219 C 28.632141 45.699219 28.85144 45.630249 29.021484 45.490234 L 36.082031 40 C 36.202026 39.900024 36.301086 39.78064 36.371094 39.640625 L 47.894531 17.300781 L 44.5625 15.582031 L 33.025391 37.945312 C 32.771229 38.437576 32.165844 38.62719 31.677734 38.375 C 31.186523 38.12207 30.995117 37.518066 31.248047 37.027344 L 42.783203 14.666016 L 39.447266 12.945312 z M 14.632812 13.359375 L 33.083984 13.359375 C 33.636719 13.359375 34.083984 13.807129 34.083984 14.359375 C 34.083984 14.911621 33.636719 15.359375 33.083984 15.359375 L 14.632812 15.359375 C 14.080078 15.359375 13.632812 14.911621 13.632812 14.359375 C 13.632812 13.807129 14.080078 13.359375 14.632812 13.359375 z M 5.9707031 19.421875 L 5.9707031 23.560547 C 5.1990967 23.187622 4.6621094 22.405212 4.6621094 21.492188 C 4.6621094 20.579163 5.1990966 19.7948 5.9707031 19.421875 z M 5.9707031 29.439453 L 5.9707031 33.578125 C 5.1990967 33.2052 4.6621094 32.420837 4.6621094 31.507812 C 4.6621094 30.594788 5.1990966 29.812378 5.9707031 29.439453 z M 14.636719 31.564453 L 24.9375 31.564453 C 25.490234 31.564453 25.9375 32.012207 25.9375 32.564453 C 25.9375 33.116699 25.490234 33.564453 24.9375 33.564453 L 14.636719 33.564453 C 14.083984 33.564453 13.636719 33.116699 13.636719 32.564453 C 13.636719 32.012207 14.083984 31.564453 14.636719 31.564453 z M 5.9707031 39.455078 L 5.9707031 43.59375 C 5.1990967 43.220825 4.6621094 42.436462 4.6621094 41.523438 C 4.6621094 40.610413 5.1990966 39.828003 5.9707031 39.455078 z M 14.636719 43.705078 L 24.40625 43.705078 C 24.958984 43.705078 25.40625 44.152832 25.40625 44.705078 C 25.40625 45.257324 24.958984 45.705078 24.40625 45.705078 L 14.636719 45.705078 C 14.083984 45.705078 13.636719 45.257324 13.636719 44.705078 C 13.636719 44.152832 14.083984 43.705078 14.636719 43.705078 z"></path>
+            </svg>
+            <h3 class="card-title">organised</h3>
+            <p class="card-text">Arnotes NER models will automatically recognize and categorize entities, helping students organize important information into their notes.</p>
+            <a href="services.html" class="card-link" target="_blank">Learn More</a>
         </div>
     </div>
-</div>
-</div>
-</section>
+</body>
 
 </div>
 </div>
@@ -175,57 +240,15 @@
 <section class="py-5">
 <div class="container">
 <div class="row mb-5">
-    <div class="col-md-8 col-xl-6 text-center mx-auto">
-        <p class="fw-bold text-success mb-2">Have some 'great' ideas for the project?</p>
-        <h2 class="fw-bold">How you can reach me</h2>
     </div>
-</div>
-<div class="row d-flex justify-content-center">
-    <div class="col-md-6 col-xl-4">
-        <div>
-            <form class="p-3 p-xl-4" method="post">
-                <div class="mb-3"><input class="form-control" type="text" id="name-1" name="name" placeholder="Name"></div>
-                <div class="mb-3"><input class="form-control" type="email" id="email-1" name="email" placeholder="Email"></div>
-                <div class="mb-3"><textarea class="form-control" id="message-1" name="message" rows="6" placeholder="Message"></textarea></div>
-                <div><button class="btn btn-primary shadow d-block w-100" type="submit">Send </button></div>
-            </form>
-        </div>
-    </div>
-    <div class="col-md-4 col-xl-4 d-flex justify-content-center justify-content-xl-start">
-        <div class="d-flex flex-wrap flex-md-column justify-content-md-start align-items-md-start h-100">
-            <div class="d-flex align-items-center p-3">
-                <div class="bs-icon-md bs-icon-circle bs-icon-primary shadow d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon bs-icon-md"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-telephone">
-                        <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"></path>
-                    </svg></div>
-                <div class="px-2">
-                    <h6 class="fw-bold mb-0">Phone</h6>
-                    <p class="text-muted mb-0">0467404401</p>
-                </div>
-            </div>
-            <div class="d-flex align-items-center p-3">
-                <div class="bs-icon-md bs-icon-circle bs-icon-primary shadow d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon bs-icon-md"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-envelope">
-                        <path fill-rule="evenodd" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"></path>
-                    </svg></div>
-                <div class="px-2">
-                    <h6 class="fw-bold mb-0">Email</h6>
-                    <p class="text-muted mb-0">abarto24@igs.vic.edu.au</p>
-                </div>
-            </div>
-            <div class="d-flex align-items-center p-3">
-                <div class="bs-icon-md bs-icon-circle bs-icon-primary shadow d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon bs-icon-md"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-pin">
-                        <path d="M4.146.146A.5.5 0 0 1 4.5 0h7a.5.5 0 0 1 .5.5c0 .68-.342 1.174-.646 1.479-.126.125-.25.224-.354.298v4.431l.078.048c.203.127.476.314.751.555C12.36 7.775 13 8.527 13 9.5a.5.5 0 0 1-.5.5h-4v4.5c0 .276-.224 1.5-.5 1.5s-.5-1.224-.5-1.5V10h-4a.5.5 0 0 1-.5-.5c0-.973.64-1.725 1.17-2.189A5.921 5.921 0 0 1 5 6.708V2.277a2.77 2.77 0 0 1-.354-.298C4.342 1.674 4 1.179 4 .5a.5.5 0 0 1 .146-.354zm1.58 1.408-.002-.001.002.001zm-.002-.001.002.001A.5.5 0 0 1 6 2v5a.5.5 0 0 1-.276.447h-.002l-.012.007-.054.03a4.922 4.922 0 0 0-.827.58c-.318.278-.585.596-.725.936h7.792c-.14-.34-.407-.658-.725-.936a4.915 4.915 0 0 0-.881-.61l-.012-.006h-.002A.5.5 0 0 1 10 7V2a.5.5 0 0 1 .295-.458 1.775 1.775 0 0 0 .351-.271c.08-.08.155-.17.214-.271H5.14c.06.1.133.191.214.271a1.78 1.78 0 0 0 .37.282z"></path>
-                    </svg></div>
-                <div class="px-2">
-                    <h6 class="fw-bold mb-0">Location</h6>
-                    <p class="text-muted mb-0">your mums sheets</p>
-                </div>
+
             </div>
         </div>
     </div>
 </div>
 </div>
 </section>
-<footer class="bg-dark">
+
 <div class="container py-4 py-lg-5">
 <hr>
 <div class="text-muted d-flex justify-content-between align-items-center pt-3">
