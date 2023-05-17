@@ -40,7 +40,12 @@
         // Call the function when the page loads
         checkUserLoggedIn();
       </script>
-    
+    <style>
+        #earlyAccessButton,
+        #loginButton {
+            display: none;
+        }
+    </style>
     </script>
 
 checkUserLoggedIn();
@@ -98,16 +103,16 @@ checkUserLoggedIn();
     
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const loginButton = document.getElementById("loginButton");
             const earlyAccessButton = document.getElementById("earlyAccessButton");
-    
+            const loginButton = document.getElementById("loginButton");
+
             firebase.auth().onAuthStateChanged((user) => {
                 if (user) {
-                    loginButton.style.display = "none";
                     earlyAccessButton.style.display = "none";
+                    loginButton.style.display = "none";
                 } else {
-                    loginButton.style.display = "block";
                     earlyAccessButton.style.display = "block";
+                    loginButton.style.display = "block";
                 }
             });
         });
